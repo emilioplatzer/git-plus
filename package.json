@@ -1,22 +1,35 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
+  "name": "git-plus",
+  "version": "0.1.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/emilioplatzer/git-plus",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "git",
+    "gui",
+    "diff",
+    "apply",
+    "patch"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Emilio Platzer",
+  "license": "MIT",
+  "dependencies": {
+    "js-to-html": "~1.0.4"
+  },
   "devDependencies": {
-    "electron": "^5.0.0"
+    "electron": "^5.0.0",
+    "electron-builder": "^20.39.0"
+  },
+  "build": {
+    "appId": "com.electron.git-tool",
+    "mac": {
+      "category": "guid git tool"
+    }
   }
 }
