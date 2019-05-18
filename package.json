@@ -1,10 +1,13 @@
 {
   "name": "git-plus",
   "version": "0.1.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "git tools",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "electron .",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
@@ -20,11 +23,13 @@
   "author": "Emilio Platzer",
   "license": "MIT",
   "dependencies": {
-    "js-to-html": "~1.0.4"
+    "js-to-html": "~1.0.5"
   },
   "devDependencies": {
-    "electron": "^5.0.0",
-    "electron-builder": "^20.39.0"
+    "@types/node": "^12.0.2",
+    "electron": "^5.0.1",
+    "electron-builder": "^20.40.2",
+    "typescript": "^3.4.5"
   },
   "build": {
     "appId": "com.electron.git-tool",
