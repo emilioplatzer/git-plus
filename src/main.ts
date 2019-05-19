@@ -3,12 +3,14 @@ import * as path from "path";
 
 let mainWindow: Electron.BrowserWindow;
 
+console.log('app.getAppPath()',app.getAppPath(), path.join(__dirname, 'dist/renderer.js'));
+
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     height: 600,
-    webPreferences: {
-      nodeIntegration: true,
+    webPreferences:{
+      preload: path.join(__dirname, 'renderer.js'),
     },
     width: 800,
   });

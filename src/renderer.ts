@@ -58,5 +58,7 @@ async function renderProject(path: string){
     }
 }
 
-renderProject('c:/hecho/npm');
-renderProject('d:/hecho/npm');
+window.addEventListener('load', ()=>{
+    renderProject('c:/hecho/npm');
+    renderProject('d:/hecho/npm');
+});
