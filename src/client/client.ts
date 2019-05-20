@@ -4,10 +4,13 @@ import {promises as fs} from 'fs';
 import {html} from 'js-to-html';
 
 async function renderProject(path: string){
+    const container = document.getElementById('projects');
+    if(!container){
+        return;
+    }
     try{
         const files = await fs.readdir(path);
         if(files && files.length){
-            const container = document.getElementById('projects');
             const div1 = document.createElement('div');
             container.appendChild(div1);
             const title = document.createElement('h2');
@@ -50,9 +53,8 @@ async function renderProject(path: string){
         }
     }catch(err){
         if(err.code !== 'ENOENT'){
-            const errContainer = document.getElementById('projects');
             const div1 = document.createElement('div');
-            errContainer.appendChild(div1);
+            container.appendChild(div1);
             div1.textContent=err.message;
         }
     }

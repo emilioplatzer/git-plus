@@ -3,8 +3,6 @@ import * as path from "path";
 
 let mainWindow: Electron.BrowserWindow;
 
-console.log('app.getAppPath()',app.getAppPath(), path.join(__dirname, 'dist/renderer.js'));
-
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -28,6 +26,7 @@ function createWindow() {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
+    // @ts-ignore
     mainWindow = null;
   });
 }

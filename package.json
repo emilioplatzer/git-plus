@@ -4,7 +4,7 @@
   "description": "git tools",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-client.json",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "start": "npm run build && electron ./dist/main.js",
@@ -30,7 +30,8 @@
     "@types/node": "^12.0.2",
     "electron": "^5.0.1",
     "electron-builder": "^20.40.2",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "mixin-patch": "^0.2.0"
   },
   "build": {
     "appId": "com.electron.git-tool",
