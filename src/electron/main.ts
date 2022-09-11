@@ -10,7 +10,7 @@ function createWindow() {
     webPreferences:{
       allowRunningInsecureContent: false,
       contextIsolation: true,
-      preload: path.join(__dirname, 'renderer.js'),
+      // preload: path.join(__dirname, 'renderer.js'),
     },
     width: 800,
   });
